@@ -2,7 +2,6 @@ import os
 import yaml
 import csv
 from datetime import datetime
-from typing import Any, List
 
 
 def load_config(file_path: str):
@@ -12,17 +11,6 @@ def load_config(file_path: str):
     with open(file_path, "r") as file:
         config = yaml.safe_load(file)
     return config
-
-
-def flatten(nested_list: List[List[Any]]):
-    """
-    Преобразует вложенный список в плоский список.
-    """
-    flat_list = []
-    for sublist in nested_list:
-        for item in sublist:
-            flat_list.append(item)
-    return flat_list
 
 
 def log_to_csv(question: str, answer: str, norma: str):
@@ -44,4 +32,3 @@ def log_to_csv(question: str, answer: str, norma: str):
         writer = csv.writer(file)
         timestamp = datetime.now().strftime("%Y-%m-%d %H:%M:%S")
         writer.writerow([timestamp, question, answer, norma])
-
