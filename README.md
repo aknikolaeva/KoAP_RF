@@ -9,7 +9,7 @@
 ```bash
 pip install -r requirements.txt
 ```
-Заполнить учетные данные GigaChat в `config/secrets.sample.yaml`, и переименовать в `config/secrets.yaml`
+Заполнить учетные данные [GigaChat](https://developers.sber.ru/portal/products/gigachat-api#tariffs) в `config/secrets.sample.yaml`, и переименовать в `config/secrets.yaml`
 
  ## Использование
 
@@ -30,6 +30,7 @@ fastapi dev main.py
 ```
 
 ### 3. Демо
+Бот доступен по ссылке: [158.160.4.178:8000/docs](158.160.4.178:8000/docs) 
 
 Пример запроса
 ```json
