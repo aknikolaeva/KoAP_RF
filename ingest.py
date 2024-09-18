@@ -8,24 +8,19 @@ from constants import (
     EMBEDDING_MODEL_NAME,
 )
 
-from vector_store import VectorStore
+from core.vector_store import VectorStore
 
-from tqdm import tqdm
-from typing import List, Tuple
 import logging
 
 logger = logging.getLogger(__name__)
 
 
-def load_documents(doc_path: str) -> Tuple[List[str], List[str]]:
+def load_documents(doc_path: str):
     """
     Загружает документ и разбивает его на сегменты текста, основываясь на шаблоне "Статья..."
 
     Параметры:
     doc_path (str): Путь к документу.
-
-    Возвращает:
-    tuple: Кортеж, содержащий список текстовых сегментов и список идентификаторов сегментов.
     """
 
     doc = Document(doc_path)

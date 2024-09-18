@@ -1,5 +1,5 @@
 python-docx==1.1.2
 chromadb==0.5.5
-torch==2.2.1
-transformers==4.40.0
 sentence_transformers==3.1.0
+fastapi==0.114.2
+fastapi[standard]==0.1.2

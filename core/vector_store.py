@@ -21,16 +21,14 @@ class VectorStore:
         """
         self.chroma_client = chromadb.Client(chroma_settings)
         self.embedding_model = SentenceTransformer(embedding_model_name)
-        self.collection = (
-            None  # self.chroma_client.create_collection(name=collection_name)
-        )
+        self.collection = None
 
     def init_collection(self, collection_name: str):
         """
         Проверяет существование коллекции и создает её, если она не существует.
 
         Параметры:
-        collection_name (str): Имя коллекции.
+        collection_name (str): имя коллекции.
         """
         # Проверяем, существует ли уже коллекция
         collections = self.chroma_client.list_collections()
@@ -53,18 +51,13 @@ class VectorStore:
             embeddings = self.embedding_model.encode(text).tolist()
             self.collection.add(embeddings=[embeddings], documents=[text], ids=[idx])
 
-    def get_most_relevant_documents(
-        self, query_text: str, n_results: int = 3
-    ) -> List[Tuple[str, float]]:
+    def get_most_relevant_documents(self, query_text: str, n_results: int = 3):
         """
         Метод поиска в коллекции ChromaDB соответствующего контекста на основе запроса.
 
         Параметры:
         query_text (str): Текст запроса.
         n_results (int): Количество результатов для возврата.
-
-        Возвращает:
-        List[Tuple[str, float]]: Список кортежей, где каждый кортеж содержит текст документа и его релевантность.
         """
         # Подготовка эмбеддинга запроса
         query_embeddings = self.embedding_model.encode(query_text).tolist()
