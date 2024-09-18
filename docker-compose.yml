@@ -1,0 +1,12 @@
+services:
+  python:
+    build:
+      context: ./
+      dockerfile: ./Dockerfile
+      cache_from:
+        - python:3.10-slim
+    volumes:
+      - ./DB:/app/DB
+      - ./chat_history:/app/chat_history
+    ports:
+      - "8000:8000"
