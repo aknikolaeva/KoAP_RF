@@ -15,7 +15,7 @@ pip install -r requirements.txt
 
 ### 1. Создание базы
 
-Создать базу данных и загрузка документа в коллекцию ChromaDB:
+Создать базу данных и загрузить документ в коллекцию ChromaDB:
 
 ```bash
 python ingest.py
