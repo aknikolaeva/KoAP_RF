@@ -4,12 +4,12 @@
 
 ## Установка
 
-Установить зависимости из файла `requirements.txt`:
+1. Установить зависимости из файла `requirements.txt`:
 
 ```bash
 pip install -r requirements.txt
 ```
-Заполнить учетные данные [GigaChat](https://developers.sber.ru/portal/products/gigachat-api#tariffs) в `config/secrets.sample.yaml`, и переименовать в `config/secrets.yaml`
+2. Заполнить учетные данные [GigaChat](https://developers.sber.ru/portal/products/gigachat-api#tariffs) в `config/secrets.sample.yaml`, переименовать файл в `config/secrets.yaml`
 
  ## Использование
 
